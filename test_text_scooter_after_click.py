@@ -5,7 +5,7 @@ from urban_routes_main_page import UrbanRoutesPage  # Import the POM class
 def test_custom_scooter_option():
     # Step 1: Open the app - update the URL after starting the server
     driver = webdriver.Chrome()
-    driver.get('https://cnt-646edca6-f113-4cd0-b646-0c96a6692450.containerhub.tripleten-services.com/')
+    driver.get('https://cnt-52982b89-e8ef-46f8-ab2b-2a790d72d1c1.containerhub.tripleten-services.com/')
 
     # Create an instance of the page class
     urban_routes_page = UrbanRoutesPage(driver)
