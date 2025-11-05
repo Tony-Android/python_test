@@ -9,6 +9,8 @@ class UrbanRoutesPage:
     CUSTOM_OPTION_LOCATOR = (By.XPATH, '//div[text()="Custom"]')
     SCOOTER_ICON_LOCATOR = (By.XPATH, '//img[@src="/static/media/scooter.cf9bb57e.svg"]')
     SCOOTER_TEXT_LOCATOR = (By.XPATH, '//div[@class="results-text"]//div[@class="text"]')
+    # The new "Duration" text locator
+    DURATION_TEXT_LOCATOR = (By.XPATH, '//div[@class="results-text"]//div[@class="duration"]')
 
     def __init__(self, driver):
         self.driver = driver  # Initialize the driver
@@ -32,3 +34,11 @@ class UrbanRoutesPage:
     def get_scooter_text(self):
         # Return the "Scooter" text
         return self.driver.find_element(*self.SCOOTER_TEXT_LOCATOR).text
+
+    def get_duration_text(self):
+        return self.driver.find_element(*self.DURATION_TEXT_LOCATOR).text
+
+        # Step to enter both "From" and "To" location
+    def enter_locations(self, from_text, to_text):
+        self.enter_from_location(from_text)
+        self.enter_to_location(to_text)
